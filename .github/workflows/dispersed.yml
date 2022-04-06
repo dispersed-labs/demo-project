@@ -14,7 +14,7 @@ jobs:
       - name: Build application
         run: |
           npm install
-          npm build
+          npm run build
 
       - name: Dispersed Release
         uses: dispersed-labs/dispersed-release-action@v1
