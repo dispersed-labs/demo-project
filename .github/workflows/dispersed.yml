@@ -11,9 +11,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Build application
+        run: |
+          npm install
+          npm build
+
       - name: Dispersed Release
         uses: dispersed-labs/dispersed-release-action@v1
         with:
-          build_dir: public
+          build_dir: build
           bundle_name: demo-project-${{ github.ref_name }}.tgz
           github_token: ${{ secrets.GITHUB_TOKEN }}
